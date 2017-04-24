@@ -25,7 +25,7 @@ SECRET_KEY = '_fmua(7+#r#a&-nw@jga&8+d7^kw)9_inwo%e2^y9#$!+721hx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["http://ddbackend-edeveloper3666886.codeanyapp.com/"]
 
 
 # Application definition
