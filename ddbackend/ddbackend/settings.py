@@ -25,7 +25,7 @@ SECRET_KEY = '_fmua(7+#r#a&-nw@jga&8+d7^kw)9_inwo%e2^y9#$!+721hx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://ddbackend-edeveloper3666886.codeanyapp.com/"]
+ALLOWED_HOSTS = ["ddbackend-edeveloper3666886.codeanyapp.com"]
 
 
 # Application definition
@@ -37,9 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'delivery',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -99,6 +104,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Custom user model
+AUTH_USER_MODEL = 'delivery.DDUser'
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:5555',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

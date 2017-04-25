@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from delivery import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+  url(r'^admin/', admin.site.urls),
+  url(r'^user/$', views.Auth.as_view(), name='login'), 
+  url(r'^order/$', views.Order.as_view(), name='ordercreate'), 
 ]
